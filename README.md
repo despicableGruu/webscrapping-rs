@@ -13,7 +13,19 @@ Patricia Reyes Silva
 José Pérez Sánchez
 
 
-Contexto y justificación
+
+
+Características del Dataset
+
+Representa las cotizaciones diarias de las acciones e índices cotizados en la bolsa de Lima. La estructura datos obtenido es:
+
+1 Título: "Valores negociados en al Bolsa de Lima"
+
+2 Subtítulo: "Cotizaciones diarias"
+
+3 Image: - a enlazar -
+
+4 Contexto y justificación
 
 Las nuevas tecnologías que permiten acceder de forma simultánea a los mercados de valores permiten la recopilación automática de datos con los que crear distintas estrategias de inversión. El poder automatizar la actualización automática de datos permite recalcular dichas estrategias, por empresas, por sectores, etc.., y, el poder actualizar automáticamente datos de distintos mercados permite realizar arbitrajes entre empresas que cotizan en distintos países, distintas monedas o incluso entre sectores de distintos países.
 
@@ -21,10 +33,9 @@ Un comienzo será la extracción de datos diaria de las cotizaciones de la Bolsa
 
 El uso de lenguaje Python nos parece realmente conveniente para esta tarea, no sólo por su utilidad para realizar Scraping de páginas web, sino también por su potencial para el manejo de dataframes, incluyendo potentes librerías para el manejo de matrices con módulos como numpy, o Pandas, para el cálculo de ratios como el Sharpe, relación de una acción respecto a su índice, etc….
 
+5 Contenido
 
-Características del Dataset
-
-Representa las cotizaciones diarias de las acciones e índices cotizados en la bolsa de Lima. La estructura datos obtenido es:
+Incluye el conjunto de acciones negociadas en la Bolsa de Lima, para cada valor negociado se obtendría, diariamente, la siguiente información:
 
 •	Acción
 
@@ -75,6 +86,18 @@ Representa las cotizaciones diarias de las acciones e índices cotizados en la b
     
     c.	Monto/importe negociado en la moneda de cotización
     
+
+6 Agradecimientos
+
+A la Bolsa de Lima y su infraestructura informática.
+
+7 Inspiración
+
+El áuge de las compañías FinTech y del trading algorítmico, así como la disposición de datos. 
+
+8 Licencia
+
+-- A determinar
 
 Ficheros del código fuente
 Aun no especificados

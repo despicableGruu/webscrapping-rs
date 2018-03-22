@@ -19,7 +19,7 @@ Las nuevas tecnologías que permiten acceder de forma simultánea a los mercados
 
 Un comienzo será la extracción de datos diaria de las cotizaciones de la Bolsa de Valores de Lima, a partir de los datos publicados en su página web, obteniendo los datos de mercado a fin de día cuando sean publicados.
 
-El uso de lenguaje Python nos parece realmente conveniente para esta tarea, no sólo por su utilidad para realizar Scraping de páginas web, sino también por su potencial para el manejo de dataframes, incluyendo potentes librerías para el manejo de matrices con módulos como numpy, para el cálculo de ratios como el Sharpe, relación de una acción respecto a su índice, etc….
+El uso de lenguaje Python nos parece realmente conveniente para esta tarea, no sólo por su utilidad para realizar Scraping de páginas web, sino también por su potencial para el manejo de dataframes, incluyendo potentes librerías para el manejo de matrices con módulos como numpy, o Pandas, para el cálculo de ratios como el Sharpe, relación de una acción respecto a su índice, etc….
 
 
 Características del Dataset

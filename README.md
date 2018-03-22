@@ -22,7 +22,6 @@ Un comienzo será la extracción de datos diaria de las cotizaciones de la Bolsa
 El uso de lenguaje Python nos parece realmente conveniente para esta tarea, no sólo por su utilidad para realizar Scraping de páginas web, sino también por su potencial para el manejo de dataframes, incluyendo potentes librerías para el manejo de matrices con módulos como numpy, para el cálculo de ratios como el Sharpe, relación de una acción respecto a su índice, etc….
 
 
-
 Características del Dataset
 
 Representa las cotizaciones diarias de las acciones e índices cotizados en la bolsa de Lima. La estructura datos obtenido es:
@@ -83,4 +82,4 @@ Aun no especificados
 Recursos
 1.	Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.
 2.	Mitchel, R. (2015). Web Scraping with Python: Collecting Data from the Modern Web. O'Reilly Media, Inc. Chapter 1. Your First Web Scraper.
-2.  Web de la Bolsa de Valores de Lima (BVL)
+2.  Web de la Bolsa de Valores de Lima (BVL), http://www.bvl.com.pe/

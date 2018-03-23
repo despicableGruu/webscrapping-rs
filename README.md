@@ -99,11 +99,11 @@ El áuge de las compañías FinTech y del trading algorítmico, así como la dis
 
 ## Código
 
--- Aun no desarrolado
+-- Aun no desarrollado
 
 ## Dataset
 
--- Dataset en ormato CSV aún no obtenido
+-- Dataset en formato CSV aún no obtenido
 
 ## Recursos
 1.	Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.

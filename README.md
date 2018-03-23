@@ -4,7 +4,7 @@
 
 ## Descripción
 
-El siguiente código en Python 3.6 tiene por objetivo aplicar las técnicas de Web Scraping para extraer datos de la web XXXX y generar como resultado un archivo de datos en formato CVS con los datos obtenidos.  
+El siguiente código en Python 3.6 tiene por objetivo aplicar las técnicas de Web Scraping para extraer datos de la web de la Bolsa de Valores de Lima y generar como resultado un archivo de datos en formato CVS con los datos obtenidos.  
 
 Esta práctica pertenece a la asignatura Tipología y ciclo de vida de los datos, correspondiente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. 
 

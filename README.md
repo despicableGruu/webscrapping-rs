@@ -27,7 +27,7 @@ La práctica se articula con el siguiente esquema:
 
 ### 3 Imagen: 
 
-![Imagen Cotizaciones](https://raw.githubusercontent.com/jperezsanchezU/WebScraping/master/ImagenCotizaciones.png)
+![Imagen Cotizaciones](https://raw.githubusercontent.com/jperezsanchezU/WebScraping/master/stock-marke-image.jpg)
 
 
 ### 4 Contexto y justificación

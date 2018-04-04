@@ -33,21 +33,21 @@ def readDailyStockPrizes(listaCotizaciones):
       currentIndex=currentIndex+1
       if (currentIndex > 3):
      #This is because exists rowspan, if not use the previous category
-          empresa=cells[0].find(text=True)
-          nemonico=cells[1].find(text=True)
-          sector=cells[2].find(text=True)
-          segmento=cells[3].find(text=True)
-          moneda=cells[4].find(text=True)	  
-          anterior=cells[5].find(text=True)
-          fechaAnterior=cells[6].find(text=True)
-          apertura=cells[7].find(text=True)
-          ultima=cells[8].find(text=True)
-          variacion=cells[9].find(text=True)
-          compra=cells[10].find(text=True)
-          venta=cells[11].find(text=True)
-          numeroAcciones=cells[12].find(text=True)
-          numeroOperaciones=cells[13].find(text=True)
-          montoNegocio=cells[14].find(text=True)		
+          empresa=cells[1].find(text=True)
+          nemonico=cells[2].find(text=True)
+          sector=cells[3].find(text=True)
+          segmento=cells[4].find(text=True)
+          moneda=cells[5].find(text=True)	  
+          anterior=cells[6].find(text=True)
+          fechaAnterior=cells[7].find(text=True)
+          apertura=cells[8].find(text=True)
+          ultima=cells[9].find(text=True)
+          variacion=cells[10].find(text=True)
+          compra=cells[11].find(text=True)
+          venta=cells[12].find(text=True)
+          numeroAcciones=cells[13].find(text=True)
+          numeroOperaciones=cells[14].find(text=True)
+          montoNegocio=cells[15].find(text=True)		
           cotizacion=[empresa,nemonico,sector,segmento,moneda,anterior,fechaAnterior,apertura,ultima, variacion,compra,venta,numeroAcciones,numeroOperaciones, montoNegocio]
           listaCotizaciones.append(cotizacion)
       
@@ -73,4 +73,3 @@ with open(filePath, 'w', newline='') as csvFile:
   writer = csv.writer(csvFile)
   for cotizacion in cotizaciones:
     writer.writerow(cotizacion)
-    

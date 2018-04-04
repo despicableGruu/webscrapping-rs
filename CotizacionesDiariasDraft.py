@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 
 
 #Function to get prices of webpage
-def readDailyStockPrizes(listaCotizaciones):
+def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
     
   mercadoAlDiaUrl = "http://www.bvl.com.pe/includes/cotizaciones_todas.dat"
   response= requests.get(mercadoAlDiaUrl)
@@ -33,6 +33,8 @@ def readDailyStockPrizes(listaCotizaciones):
       currentIndex=currentIndex+1
       if (currentIndex > 3):
      #This is because exists rowspan, if not use the previous category
+     
+          enlaceEmpresa = cells[1].find()
           empresa=cells[1].find(text=True)
           nemonico=cells[2].find(text=True)
           sector=cells[3].find(text=True)
@@ -49,19 +51,28 @@ def readDailyStockPrizes(listaCotizaciones):
           numeroOperaciones=cells[14].find(text=True)
           montoNegocio=cells[15].find(text=True)		
           cotizacion=[empresa,nemonico,sector,segmento,moneda,anterior,fechaAnterior,apertura,ultima, variacion,compra,venta,numeroAcciones,numeroOperaciones, montoNegocio]
+          enlaceCotizacion=[empresa,nemonico,sector,segmento,moneda,enlaceEmpresa]
           listaCotizaciones.append(cotizacion)
+          listaCotizacionesEnlace.append(enlaceCotizacion)
       
   return
 
 
 cotizaciones=[]
-headerList=["Empresa","Nemónico","Sector","Segmento","Moneda","Anterior","Fecha Anterior","Apertura","Última","Variación","Compra", "Venta","Número Acciones","Número Operaciones", "Monto Negocio"]
+detalleCotizaciones=[]
+headerList=["Empresa","Nemónico","Sector","Segmento","Moneda","Anterior","Fecha Anterior","Apertura","Última","Variación","Compra", "Venta","Número Acciones","Número Operaciones", "Monto Negocio", "enlaceDetalle"]
+headerList2=["Empresa", "enlaceDetalle"]
 cotizaciones.append(headerList)
 
+detalleCotizaciones.append(headerList2)
+
+
 print(cotizaciones)
+
+print(detalleCotizaciones)
     
 
-readDailyStockPrizes(cotizaciones)
+readDailyStockPrizes(cotizaciones, detalleCotizaciones)
 
 print(cotizaciones)
 
@@ -73,3 +84,18 @@ with open(filePath, 'w', newline='') as csvFile:
   writer = csv.writer(csvFile)
   for cotizacion in cotizaciones:
     writer.writerow(cotizacion)
+  
+    
+    
+filename = "cotizacionesDiariasEnlaces.csv"
+
+filePath = os.path.join(currentDir, filename)
+
+    
+with open(filePath, 'w', newline='') as csvFile:
+  writer = csv.writer(csvFile)
+  for cotizacion in detalleCotizaciones:
+    writer.writerow(cotizacion)
+
+
+    

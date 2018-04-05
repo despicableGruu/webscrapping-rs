@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 #filePath = os.path.join(currentDir, filename)
 
 
-#Function to get prices of webpage
+#Funcion para obtener los datos de las cotizaciones diarias
 def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
     
   mercadoAlDiaUrl = "http://www.bvl.com.pe/includes/cotizaciones_todas.dat"
@@ -23,7 +23,7 @@ def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
   
   
   print(table)
-  
+  diahora= datetime.now().strftime("%d-%m-%Y %H:%M")
   currentIndex=0
   for row in table.findAll("tr"):
       cells = row.findAll('td')
@@ -34,6 +34,8 @@ def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
       if (currentIndex > 3):
      #This is because exists rowspan, if not use the previous category
      
+          fecha = diahora
+          imagen = cells[0].find('img')['src']
           enlaceEmpresa = cells[1].find()
           empresa=cells[1].find(text=True)
           nemonico=cells[2].find(text=True)
@@ -50,8 +52,16 @@ def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
           numeroAcciones=cells[13].find(text=True)
           numeroOperaciones=cells[14].find(text=True)
           montoNegocio=cells[15].find(text=True)		
-          cotizacion=[empresa,nemonico,sector,segmento,moneda,anterior,fechaAnterior,apertura,ultima, variacion,compra,venta,numeroAcciones,numeroOperaciones, montoNegocio]
-          enlaceCotizacion=[empresa,nemonico,sector,segmento,moneda,enlaceEmpresa]
+          
+          if imagen == '/images/azul1.jpg':
+              estado = 'Igual'
+          elif imagen == '/images/flecha_roja-b.gif':
+              estado = 'A la baja'
+          else :
+              estado = 'Al alza'
+            
+          cotizacion=[fecha,imagen,estado,empresa,nemonico,sector,segmento,moneda,anterior,fechaAnterior,apertura,ultima, variacion,compra,venta,numeroAcciones,numeroOperaciones, montoNegocio]
+          enlaceCotizacion=[fecha,imagen,estado,empresa,nemonico,sector,segmento,moneda,enlaceEmpresa]
           listaCotizaciones.append(cotizacion)
           listaCotizacionesEnlace.append(enlaceCotizacion)
       
@@ -60,8 +70,8 @@ def readDailyStockPrizes(listaCotizaciones, listaCotizacionesEnlace):
 
 cotizaciones=[]
 detalleCotizaciones=[]
-headerList=["Empresa","Nemónico","Sector","Segmento","Moneda","Anterior","Fecha Anterior","Apertura","Última","Variación","Compra", "Venta","Número Acciones","Número Operaciones", "Monto Negocio", "enlaceDetalle"]
-headerList2=["Empresa", "enlaceDetalle"]
+headerList=["Fecha-Hora","Imagen","Estado","Empresa","Nemónico","Sector","Segmento","Moneda","Anterior","Fecha Anterior","Apertura","Última","Variación","Compra", "Venta","Número Acciones","Número Operaciones", "Monto Negocio", "enlaceDetalle"]
+headerList2=["Fecha-Hora","Imagen","Estado","Empresa", "enlaceDetalle"]
 cotizaciones.append(headerList)
 
 detalleCotizaciones.append(headerList2)

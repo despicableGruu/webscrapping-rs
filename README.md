@@ -99,11 +99,28 @@ El áuge de las compañías FinTech y del trading algorítmico, así como la dis
 
 ## Código
 
--- Aun no desarrollado
+El código esta implementado en el fichero de código python CotizacionesBVL.py
+
+Este código tiene dos funcionalidades diferentes. La principal es la obtención de las cotizaciones diarias de las compañías listada en la Bolsa de Valores de Lima. Para ello basta ejecutar el script sin parámetros
+
+python CotizacionesBVL.py 
+
+Esto generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato: CotizacionesDiarias_<YYYYMMDD>.csv . 
+
+La segunda funcionalidad implementada permite obtener las cotizaciones para una empresa determinada, pasando su nemónico o símbolo de cotización y, opcionalmente, un rango de fechas. Por ejemplo
+
+python CotizacionesBVL.py  --nemonic BVN --endDate 20180101 --startDate 20140501
+
+Para obtener todas las cotizaciones de la empresa BVN, Minera Buenaventura, entre el 01/05/2014 y 01/01/2018, ambos días inclusive si hubo mercado esos días.
+
+Esta opción genera un fichero con nombre en formato CotizacionesDiarias_<nemonico>.csv, siendo <nemónico> el correspondiente a la empresa consultada.
+
 
 ## Dataset
 
--- Dataset en formato CSV aún no obtenido
+El dataset incluido en los ficheros CSV generados es idéntico, si bien algunos campos estarán vacíos si no hay valores disponibles encontrados.
+
+Fecha-Hora Descarga,Fecha cotización,Imagen,Estado,Empresa,Nemónico,Sector,Segmento,Moneda,Anterior,Fecha Anterior,Apertura,Última,Variación,Compra,Venta,Número Acciones,Número Operaciones,Monto Negocio
 
 ## Recursos
 1.	Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.

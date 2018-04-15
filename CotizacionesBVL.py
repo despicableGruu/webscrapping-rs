@@ -57,9 +57,7 @@ def getCompanyData(nemonic):
               sector=cells[3].find(text=True)
               segmento=cells[4].find(text=True)
               moneda=cells[5].find(text=True)	  
-          
-              print ([empresa,sector,segmento,moneda])
-            
+                    
               return [empresa,sector,segmento,moneda]
               
 
@@ -214,11 +212,11 @@ def readCompanyStockPrizes(nemonic, startDate, endDate):
           fechaAnterior=cells[9].find(text=True)
           apertura=cells[1].find(text=True)
           ultima=cells[2].find(text=True)
-          variacion = ""
+          variacion = "0.00"
           
           if ultima.strip() and ultima.strip():
-              variacion = round(float(ultima) - float(apertura),3)
-              
+              variacion = round((float(ultima) - float(apertura))/100,3)
+                            
           numeroAcciones=cells[6].find(text=True)          
           montoNegocio=cells[7].find(text=True)		         
 
@@ -256,3 +254,4 @@ else:
     print("Buscando cotizaciones para " + args.nemonic)
     readCompanyStockPrizes(args.nemonic, args.startDate, args.endDate)
 
+print ("Script Terminado")

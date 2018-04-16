@@ -5,7 +5,6 @@ import argparse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-
 def getLastMarketDate():
         
     # Obtener fecha del día de cotización que se obtiene

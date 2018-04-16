@@ -27,7 +27,7 @@ La práctica se articula con el siguiente esquema:
 
 ### 3 Imagen: 
 
-![Imagen Cotizaciones](https://raw.githubusercontent.com/jperezsanchezU/WebScraping/master/stock-marke-image.jpg)
+![Imagen Cotizaciones](https://raw.githubusercontent.com/jperezsanchezU/WebScraping/master/doc/stock-marke-image.jpg)
 
 
 ### 4 Contexto y justificación
@@ -91,11 +91,16 @@ A la Bolsa de Lima y su infraestructura informática.
 
 ## Inspiración
 
-El áuge de las compañías FinTech y del trading algorítmico, así como la disposición de datos. 
+El auge de las compañías FinTech y del trading algorítmico, así como la disposición de datos. 
 
 ## Licencia
 
--- A determinar
+El código python incluido en los scripts está liberado con licencia GPL3, con permiso de modificación, incluso para uso comercial, distribución, etc.., pero con la exención de ninguna responsabilidad por su uso ni ninguna garantía.
+
+Los datos generados mediante este script se liberan bajo licencia "CC BY-SA 4.0 License.", con la siguiente salvaguardia legal:
+Los datos  obtenidos y almacenados en los ficheros cvs no son necesariamente en tiempo real ni tienen porqué ser totalmente exactos.  En este sentido, los autores del script de carga de datos no  tendrán ninguna responsabilidad ante cualquier pérdida que pueda tener como consecuencia de utilizar estos datos.
+
+No se aceptará ninguna responsabilidad por cualquier pérdida o menoscabo producido como resultado de la confianza en la información contenida en estos datos, incluidos datos o cotizaciones.
 
 ## Código
 
@@ -118,9 +123,55 @@ Esta opción genera un fichero con nombre en formato CotizacionesDiarias_nemonic
 
 ## Dataset
 
-El dataset incluido en los ficheros CSV generados es idéntico, si bien algunos campos estarán vacíos si no hay valores disponibles encontrados.
+El dataset incluido en los ficheros CSV generados es idéntico tanto para las cotizaciones diarias de todos los valores negociados en la Bolsa de Lima, como para descargas de cotizaciones de una empresa en un rango de fechas. No obstante, los campos indicados con un asterisco, *, sólo están presentes en el primer caso, siendo un campo vacío en las cotizaciones históricas de una empresa.
 
-Fecha-Hora Descarga,Fecha cotización,Imagen,Estado,Empresa,Nemónico,Sector,Segmento,Moneda,Anterior,Fecha Anterior,Apertura,Última,Variación,Compra,Venta,Número Acciones,Número Operaciones,Monto Negocio
+• Datos de la cotización
+
+    Fecha-Hora		Fecha de Generación del fichero
+
+    Fecha Cotización    Fecha de cotización de la fila.
+
+    Imagen		    Icono azul si hay subida en el día o rojo en bajada *
+
+    Estado		    Texto indicando tendencia del día al alza o a la baja *
+
+• Valor negociado
+
+    Nombre          (Empresa, producto, fondo, índice)
+
+    Nemónico	    Símbolo representativo del valor
+
+    Sector		    (Diversas, Agrario, Industriales, Bancos – financieras, etc..)    
+
+    Segmento	    (Clasificacion del valor principalmente por su liquidez)
+
+• Cotizaciones
+
+    Moneda		    Sol / Dólar
+
+    Precio Anterior Precio de cierre día anterior   
+
+    Fecha Anterior  Fecha de negociación anterior (no necesariamente día anterior)  
+
+    Apertura		Precio apertura actual. 
+
+    Última			Precio último del día. 
+
+    Variación		Variación del precio en % respecto al día anterior,  *
+
+• Propuestas 
+
+    Compra          Precio mayor de Compra en el día *
+
+    Venta           Precio menor de Venta en el día	*
+
+• Negociación 
+
+    Número Acciones		Volumen de negociación
+
+    Núm. Operaciones	Realizadas en la jornada para este valor
+
+    Monto Negocio     	Monto/importe negociado en la moneda de cotización
 
 ## Recursos
 1.	Lawson, R. (2015). Web Scraping with Python. Packt Publishing Ltd. Chapter 2. Scraping the Data.

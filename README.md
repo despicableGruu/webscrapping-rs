@@ -8,6 +8,13 @@ El siguiente código en Python 3.6 tiene por objetivo aplicar las técnicas de W
 
 Esta práctica pertenece a la asignatura Tipología y ciclo de vida de los datos, correspondiente al Máster en Ciencia de Datos de la Universitat Oberta de Catalunya. 
 
+El repositorio de organiza en el archivo de Licencia, este fichero README.md y los directorios:
+
+    /src    Donde se encuentra el código python que implementa el webscrapping.
+    /doc    Donde está la versión PDF de esta documentación.
+    /csv    Ficheros CSV de ejemplo generados con el script. Cotizaciones diarias e históricas de un valor.
+
+
 ## Miembros del equipo
 
 Patricia Reyes Silva

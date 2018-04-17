@@ -111,25 +111,29 @@ No se aceptará ninguna responsabilidad por cualquier pérdida o menoscabo produ
 
 ## Código
 
-El código esta implementado en el fichero de código python CotizacionesBVL.py
+El script se detalla en el fichero de código python CotizacionesBVL.py
 
-Este código tiene dos funcionalidades diferentes. La principal es la obtención de las cotizaciones diarias de las compañías listada en la Bolsa de Valores de Lima. Para ello basta ejecutar el script sin parámetros
+Este código tiene dos funcionalidades diferentes. 
 
-python CotizacionesBVL.py 
+(1) La principal es la obtención de las cotizaciones diarias de las compañías listadas en la Bolsa de Valores de Lima. Para ello basta con ejecutar el script sin parámetros:
 
-Esto generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato: CotizacionesDiarias_YYYYMMDD.csv . 
+    python CotizacionesBVL.py 
 
-La segunda funcionalidad implementada permite obtener las cotizaciones para una empresa determinada, pasando su nemónico o símbolo de cotización y, opcionalmente, un rango de fechas. Por ejemplo
+    Como salida, el srcipt generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato:             CotizacionesDiarias_YYYYMMDD.csv . 
 
-python CotizacionesBVL.py  --nemonic BVN --endDate 20180101 --startDate 20140501
+(2) La segunda funcionalidad implementada permite obtener las cotizaciones para una empresa determinada, pasando su nemónico o símbolo de cotización y, opcionalmente, un rango de fechas. Por ejemplo:
 
-Para obtener todas las cotizaciones de la empresa BVN, Minera Buenaventura, entre el 01/05/2014 y 01/01/2018, ambos días inclusive si hubo mercado esos días.
+    python CotizacionesBVL.py  --nemonic BVN --endDate 20180101 --startDate 20140501
 
-Esta opción genera un fichero con nombre en formato CotizacionesDiarias_nemonico.csv, siendo nemónico el correspondiente a la empresa consultada.
+    Para obtener todas las cotizaciones de la empresa BVN, Minera Buenaventura, entre el 01/05/2014 y 01/01/2018, ambos días inclusive si     hubo mercado esos días.
 
-El código consta de una parte común, que interpreta, si los hay, los argumentos de entrada. Si no hay un nemónico o símbolo de empresa como argumento de entrada llamara a la funcionalidad de obtener los últimos datos de cotizaciones publicados para todos los valores. Para ello llamará a la función _readDailyStockPrizes()_ . Ésta a su vez llama a la función _getLastMarketDate()_ para obtener cuál es la última fecha de mercado llamando a otra url distinta, pues esta fecha no viene por defecto en la llamada a la página diaria de cotizaciones, y hay días donde el mercado está cerrado, y generará el fichero CSV correspondiente añadiendo la Fecha de cotización.
+    Esta opción genera un fichero con nombre en formato CotizacionesDiarias_nemonico.csv, siendo nemónico el correspondiente a la empresa     consultada.
 
-Si se ha indicado un nemónico, se llama a la función _readCompanyStockPrizes(nemonic, startDate, endDate) _ . Ésta obtiene datos adicionales de la empresa llamado a la función auxiliar _ getCompanyData(nemonic):_ que obtiene datos adicionales de la empresa: nombre, sector, segmento, moneda llamando a otra url distinta la llamada de cotizaciones, después se interpretan los argumentos del rango de fechas, y se hace la llamada a la URL de cotizaciones. Después se unen lo datos de la empresa con los datos de las cotizaciones en el mismo fichero CSV desalida.
+El código consta de una parte común, que interpreta, si los hubiera, los argumentos de entrada. 
+
+Si no hay un nemónico o símbolo de empresa como argumento de entrada llamará a la función  _readDailyStockPrizes()_ encargada de obtener los últimos datos de cotizaciones publicados. Ésta función llama a su vez a otra función, identificada como _getLastMarketDate()_ para obtener la última fecha de mercado, y que haciendo referencia a otra url, pues esta fecha no viene por defecto en la llamada original de consulta en la página diaria de cotizaciones (y porque tambien hay días donde el mercado está cerrado), finalmente genera el fichero CSV correspondiente, teniendo la Fecha de cotización como parte del nombre (CotizacionesDiarias_YYYYMMDD.csv)
+
+En el caso que se indique un nemónico de la empresa que cotiza, se llama a la función _readCompanyStockPrizes(nemonic, startDate, endDate)_. Ésta función obtiene datos adicionales de la empresa a traves de la función auxiliar _ getCompanyData(nemonic):_ donde se obtiene datos como: nombre, sector, segmento, moneda extraidos desde otra url distinta a la inicial, luego se interpretan los argumentos del rango de fechas, y se hace la llamada a la URL de cotizaciones. Finalmente, se unen lo datos de la empresa con los datos de las cotizaciones en el mismo fichero CSV de salida (CotizacionesDiarias_nemonico.csv)
 
 
 ## Dataset

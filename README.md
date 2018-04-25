@@ -119,15 +119,15 @@ Este código tiene dos funcionalidades diferentes.
 
     python CotizacionesBVL.py 
 
-    Como salida, el srcipt generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato:             CotizacionesDiarias_YYYYMMDD.csv . 
+   Como salida, el srcipt generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato:             CotizacionesDiarias_YYYYMMDD.csv . 
 
 (2) La segunda funcionalidad implementada permite obtener las cotizaciones para una empresa determinada, pasando su nemónico o símbolo de cotización y, opcionalmente, un rango de fechas. Por ejemplo:
 
     python CotizacionesBVL.py  --nemonic BVN --endDate 20180101 --startDate 20140501
 
-    Para obtener todas las cotizaciones de la empresa BVN, Minera Buenaventura, entre el 01/05/2014 y 01/01/2018, ambos días inclusive si     hubo mercado esos días.
+   Para obtener todas las cotizaciones de la empresa BVN, Minera Buenaventura, entre el 01/05/2014 y 01/01/2018, ambos días inclusive si     hubo mercado esos días.
 
-    Esta opción genera un fichero con nombre en formato CotizacionesDiarias_nemonico.csv, siendo nemónico el correspondiente a la empresa     consultada.
+   Esta opción genera un fichero con nombre en formato CotizacionesDiarias_nemonico.csv, siendo nemónico el correspondiente a la empresa     consultada.
 
 El código consta de una parte común, que interpreta, si los hubiera, los argumentos de entrada. 
 

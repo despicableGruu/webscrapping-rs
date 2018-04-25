@@ -119,7 +119,7 @@ Este código tiene dos funcionalidades diferentes.
 
     python CotizacionesBVL.py 
 
-   Como salida, el srcipt generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato:             CotizacionesDiarias_YYYYMMDD.csv . 
+   Como salida, el script generará un fichero en formato CSV con las últimas cotizaciones de las compañías y nombre en formato:             CotizacionesDiarias_YYYYMMDD.csv . 
 
 (2) La segunda funcionalidad implementada permite obtener las cotizaciones para una empresa determinada, pasando su nemónico o símbolo de cotización y, opcionalmente, un rango de fechas. Por ejemplo:
 
